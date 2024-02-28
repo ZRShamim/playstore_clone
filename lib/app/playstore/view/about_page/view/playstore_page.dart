@@ -76,13 +76,20 @@ class PlaystorePage extends GetView<PlaystoreController> {
                               width: 60.w,
                               height: 60.w,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(controller.isInstalling.value ? 30.r : 12.r),
+                                borderRadius: BorderRadius.circular(
+                                    controller.isInstalling.value
+                                        ? 30.r
+                                        : 12.r),
                               ),
                               child: AnimatedContainer(
-                                margin: EdgeInsets.all(controller.isInstalling.value ? 10.sp : 0),
+                                margin: EdgeInsets.all(
+                                    controller.isInstalling.value ? 10.sp : 0),
                                 duration: const Duration(milliseconds: 200),
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(controller.isInstalling.value ? 30.r : 12.r),
+                                  borderRadius: BorderRadius.circular(
+                                      controller.isInstalling.value
+                                          ? 30.r
+                                          : 12.r),
                                   color: Colors.grey[50],
                                   image: DecorationImage(
                                     image: NetworkImage(
@@ -281,7 +288,10 @@ class PlaystorePage extends GetView<PlaystoreController> {
                         if (controller.isInstalling.value)
                           AnimatedContainer(
                             duration: const Duration(milliseconds: 300),
-                            width: controller.isInstalling.value ? DeviceSizes.getDeviceWidth(context) * 0.5 - 25.w : null,
+                            width: controller.isInstalling.value
+                                ? DeviceSizes.getDeviceWidth(context) * 0.5 -
+                                    25.w
+                                : null,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
@@ -309,7 +319,9 @@ class PlaystorePage extends GetView<PlaystoreController> {
                           ),
                         AnimatedContainer(
                           duration: const Duration(milliseconds: 300),
-                          width: controller.isInstalling.value ? DeviceSizes.getDeviceWidth(context) * 0.5 - 25.w : DeviceSizes.getDeviceWidth(context) - 40.w,
+                          width: controller.isInstalling.value
+                              ? DeviceSizes.getDeviceWidth(context) * 0.5 - 25.w
+                              : DeviceSizes.getDeviceWidth(context) - 40.w,
                           child: controller.isInstalling.value
                               ? ElevatedButton(
                                   style: ElevatedButton.styleFrom(
@@ -328,12 +340,16 @@ class PlaystorePage extends GetView<PlaystoreController> {
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: KColors.psPrimaryColor,
                                     shape: const StadiumBorder(),
+                                    surfaceTintColor: Colors.white,
                                   ),
                                   onPressed: () {
                                     controller.installApp();
                                   },
                                   child: const Text(
                                     'Install',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                         ),
@@ -354,7 +370,10 @@ class PlaystorePage extends GetView<PlaystoreController> {
                           child: Container(
                             margin: EdgeInsets.only(
                               left: index == 0 ? 20.w : 5.w,
-                              right: index == controller.playstoreData.images.length - 1 ? 20.w : 5.w,
+                              right: index ==
+                                      controller.playstoreData.images.length - 1
+                                  ? 20.w
+                                  : 5.w,
                             ),
                             width: 70.w,
                             decoration: BoxDecoration(
@@ -832,7 +851,9 @@ class ProgressBar extends StatelessWidget {
             children: [
               Container(
                 // height: 7.w,
-                width: DeviceSizes.getDeviceWidth(context) * 0.6 * ratingParcentage,
+                width: DeviceSizes.getDeviceWidth(context) *
+                    0.6 *
+                    ratingParcentage,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.r),
                   color: KColors.psPrimaryColor,

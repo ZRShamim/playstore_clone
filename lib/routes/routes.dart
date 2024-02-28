@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:playstore_clone/app/playstore/about_page/view/playstore_page.dart';
+import 'package:playstore_clone/app/playstore/view/about_page/view/playstore_page.dart';
 import 'package:playstore_clone/app/playstore/binding/playstore_binding.dart';
-import 'package:playstore_clone/app/playstore/rating_page/view/rating_page.dart';
+import 'package:playstore_clone/app/playstore/view/rating_page/view/rating_page.dart';
 
 class Routes {
   static const playstorePage = '/playstorePage';

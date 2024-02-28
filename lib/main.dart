@@ -17,11 +17,13 @@ class MainApp extends StatelessWidget {
       designSize: const Size(390, 780),
       builder: (_, child) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Earning App',
+        title: 'Play Store Clone',
         builder: (context, widget) {
           ScreenUtil.init(context);
           return MediaQuery(
-            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            data: MediaQuery.of(context).copyWith(
+              textScaler: const TextScaler.linear(1.0),
+            ),
             child: widget!,
           );
         },

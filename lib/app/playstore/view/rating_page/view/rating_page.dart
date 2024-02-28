@@ -12,8 +12,10 @@ class RatingPage extends GetView<PlaystoreController> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () => discardDialog(context),
+    return PopScope(
+      onPopInvoked: (didPop) {
+        discardDialog(context);
+      },
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -23,6 +25,7 @@ class RatingPage extends GetView<PlaystoreController> {
               await showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
+                  surfaceTintColor: Colors.white,
                   title: Text(
                     'Discard Draft?',
                     style: KTextStyles.psHeading,
@@ -135,7 +138,8 @@ class RatingPage extends GetView<PlaystoreController> {
                         height: 5.h,
                       ),
                       SizedBox(
-                        width: DeviceSizes.getDeviceWidth(context) * .7.w - 40.w,
+                        width:
+                            DeviceSizes.getDeviceWidth(context) * .7.w - 40.w,
                         child: Text(
                           'Reviews are public and includeyour account and device info.',
                           style: KTextStyles.psBodyText,
@@ -205,6 +209,9 @@ class RatingPage extends GetView<PlaystoreController> {
                 maxLines: null,
                 style: KTextStyles.psHeading,
                 cursorColor: KColors.psPrimaryColor,
+                onTapOutside: (event) {
+                  FocusScope.of(context).unfocus();
+                },
                 decoration: InputDecoration(
                   hintText: 'Describe your experience',
                   hintStyle: TextStyle(
